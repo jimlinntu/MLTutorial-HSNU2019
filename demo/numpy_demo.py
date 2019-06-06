@@ -11,8 +11,8 @@ def f(x, W_1, b_1, W_2, b_2):
 
 def gradient(x, W_1, W_2, h, o, target):
     diff = np.reshape(o - target, (1, (o - target).shape[0]))
-    h = np.reshape(h, (1, h.shape[0])) # one rowj
-    x = np.reshape(x, (1, x.shape[0])) # one rwo
+    h = np.reshape(h, (1, h.shape[0])) # one row
+    x = np.reshape(x, (1, x.shape[0])) # one row
     gradient_W_1 = x.T.dot(diff).dot(W_2.T)
     gradient_W_2 = h.T.dot(diff) 
     return gradient_W_1, gradient_W_2
